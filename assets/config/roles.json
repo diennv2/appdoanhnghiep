@@ -1,0 +1,80 @@
+{
+  "_note": "DEMO ONLY — default_accounts are for local development and testing. Never use in production.",
+  "default_accounts": [
+    {
+      "username": "admin",
+      "password": "123456",
+      "name": "Admin User",
+      "role": "admin",
+      "phone": "+84912345678",
+      "email": "admin@attendee.com",
+      "user_id": "admin_001",
+      "designation": "Quản lý"
+    },
+    {
+      "username": "nhanvien",
+      "password": "123456",
+      "name": "Nguyễn Văn A",
+      "role": "user",
+      "phone": "+84901234567",
+      "email": "nhanvien@attendee.com",
+      "user_id": "user_001",
+      "designation": "Nhân viên"
+    }
+  ],
+  "roles": {
+    "admin": {
+      "role_name": "Quản lý",
+      "description": "Quản lý toàn bộ hệ thống chấm công và nhân sự",
+      "permissions": {
+        "view_statistics_daily": true,
+        "view_statistics_monthly": true,
+        "view_attendance_on_time": true,
+        "view_attendance_deviation_minutes": true,
+        "view_all_employee_salary": true,
+        "manage_salary_transfer": true,
+        "salary_calculation_rules": {
+          "base_by_working_days": true,
+          "overtime_bonus": true,
+          "additional_bonus": true
+        },
+        "manage_employees": true,
+        "view_own_profile": true,
+        "checkin_by_location": false
+      },
+      "dashboard_tabs": [
+        {"id": "home", "label": "Trang chủ", "icon": "home_outlined"},
+        {"id": "statistics", "label": "Thống kê", "icon": "bar_chart_outlined"},
+        {"id": "salary", "label": "Lương", "icon": "payments_outlined"},
+        {"id": "settings", "label": "Cài đặt", "icon": "settings_outlined"}
+      ]
+    },
+    "user": {
+      "role_name": "Nhân viên",
+      "description": "Nhân viên chấm công hàng ngày và xem thông tin cá nhân",
+      "permissions": {
+        "checkin_by_location": true,
+        "view_own_attendance": true,
+        "view_own_attendance_status": true,
+        "view_own_salary": true,
+        "salary_details": {
+          "view_working_days": true,
+          "view_overtime": true,
+          "view_bonus": true,
+          "view_total_received": true
+        },
+        "view_statistics_daily": false,
+        "view_statistics_monthly": false,
+        "view_all_employee_salary": false,
+        "manage_salary_transfer": false,
+        "manage_employees": false
+      },
+      "dashboard_tabs": [
+        {"id": "home", "label": "Trang chủ", "icon": "home_outlined"},
+        {"id": "activity", "label": "Hoạt động", "icon": "timeline_outlined"},
+        {"id": "salary", "label": "Lương", "icon": "payments_outlined"},
+        {"id": "profile", "label": "Hồ sơ", "icon": "person_outline"}
+      ]
+    }
+  }
+}
